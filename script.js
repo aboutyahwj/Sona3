@@ -37,3 +37,38 @@ scrollToTopButton.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+window.onload = function() {
+    // تحقق مما إذا كان المستخدم قد سجل دخوله مسبقًا
+    if (localStorage.getItem('userLoggedIn') === 'true') {
+        window.location.href = "dashboard.html";  // إعادة توجيه المستخدم إلى صفحة الحساب إذا كان مسجلاً
+    }
+
+    // إضافة حساب admin إذا لم يكن موجودًا في localStorage
+    if (!localStorage.getItem('adminCreated')) {
+        // إضافة بيانات المشرف
+        localStorage.setItem('email', 'admin@example.com');
+        localStorage.setItem('password', 'admin123');
+        localStorage.setItem('adminCreated', 'true');  // تأكيد أنه تم إنشاء الحساب
+    }
+};
+
+// إضافة الحدث عند إرسال النموذج (تسجيل الدخول)
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // تحقق من البريد الإلكتروني وكلمة المرور
+    const storedEmail = localStorage.getItem('email');
+    const storedPassword = localStorage.getItem('password');
+
+    if (email === storedEmail && password === storedPassword) {
+        // إذا كانت البيانات صحيحة، تسجيل الدخول بنجاح
+        localStorage.setItem('userLoggedIn', 'true');
+        alert('Login successful!');
+        window.location.href = "dashboard.html";  // توجيه المستخدم إلى صفحة أخرى بعد تسجيل الدخول
+    } else {
+        alert('Invalid email or password. Please try again.');
+    }
+});
