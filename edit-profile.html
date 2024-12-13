@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعديل الملف الشخصي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>تعديل الملف الشخصي</h1>
+</header>
+
+<section id="edit-profile-form">
+    <form method="POST" action="update-profile.php">
+        <label for="name">الاسم:</label>
+        <input type="text" id="name" name="name" value="[اسم المستخدم]" required>
+
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" name="email" value="[البريد الإلكتروني]" required>
+
+        <label for="phone">رقم الهاتف:</label>
+        <input type="tel" id="phone" name="phone" value="[رقم الهاتف]" required>
+
+        <button type="submit">تحديث البيانات</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 جميع الحقوق محفوظة</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?php
+// معالجة اختيار المدينة والمنطقة
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $city = $_POST['city'];
+    $area = $_POST['area'];
+
+    // تخزين البيانات أو معالجتها هنا
+    // مثلاً، تخزين المدينة والمنطقة في الجلسة
+    session_start();
+    $_SESSION['city'] = $city;
+    $_SESSION['area'] = $area;
+
+    // توجيه المستخدم إلى صفحة التأكيد أو صفحة أخرى
+    header("Location: confirmation.html");
+    exit();
+}
+?>

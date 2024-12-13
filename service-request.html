@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب خدمة</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>طلب خدمة</h1>
+    </header>
+    <main>
+        <form action="confirm-request.html" method="post">
+            <label for="service">نوع الخدمة:</label>
+            <select id="service" name="service" required>
+                <option value="electrician">كهربائي</option>
+                <option value="plumber">سباك</option>
+                <option value="carpenter">نجار</option>
+            </select>
+            
+            <label for="description">وصف المشكلة:</label>
+            <textarea id="description" name="description" required></textarea>
+            
+            <label for="location">الموقع:</label>
+            <input type="text" id="location" name="location" required>
+            
+            <button type="submit" class="button">إرسال الطلب</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 منصة الفنيين - جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>
