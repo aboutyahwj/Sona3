@@ -47,7 +47,7 @@ window.onload = function() {
     if (!localStorage.getItem('adminCreated')) {
         // إضافة بيانات المشرف
         localStorage.setItem('email', 'admin@example.com');
-        localStorage.setItem('password', 'admin3');
+        localStorage.setItem('password', 'admin123');
         localStorage.setItem('adminCreated', 'true');  // تأكيد أنه تم إنشاء الحساب
     }
 };
