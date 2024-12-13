@@ -57,6 +57,20 @@
             alert('Logged out successfully!');
             window.location.href = 'login.html';
         });
+
+        // Scroll to Top functionality
+        let scrollToTopBtn = document.querySelector('.scroll-to-top');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        };
+
+        scrollToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
     </script>
 </body>
 </html>
